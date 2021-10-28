@@ -1,5 +1,18 @@
 #FirstPage{
     height: 100vh;
     width: 100vw;
-    background: brown;
+}
+
+#Header{
+    flex: 0.06;
+    background: black;
+}
+
+#AppBody{
+    flex: 0.94;
+}
+
+#AppBody > div{
+    height: 100%;
+    width: 100%;
 }
