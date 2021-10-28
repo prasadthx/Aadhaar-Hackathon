@@ -1,5 +1,17 @@
 #AddCheckIn{
     height: 100%;
     width: 100%;
-    background: darkmagenta;
+    display: flex;
+}
+
+#AddCheckIn > div{
+    flex: 0.5;
+}
+
+#profileInput > div > div{
+    flex: 0.5;
+}
+
+#profileInput > div {
+    width: 95%;
 }
