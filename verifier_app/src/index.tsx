@@ -3,10 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createBrowserHistory } from "history";
 import {BrowserRouter} from "react-router-dom";
 
-const customHistory = createBrowserHistory();
 
 ReactDOM.render(
   <React.StrictMode>

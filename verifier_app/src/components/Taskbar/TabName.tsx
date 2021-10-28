@@ -1,10 +1,12 @@
+interface PropTypes {
+    currentPage:string;
+}
 
-
-export const TabName = () => {
+export const TabName = (props:PropTypes) => {
     return(
         <div style={{flex:0.8}} className={"text-center flex justify-center items-center"}>
             <div>
-                Home
+                {props.currentPage}
             </div>
         </div>
     )
