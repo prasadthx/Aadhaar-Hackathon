@@ -12,7 +12,7 @@ pub struct Client{
 }
 
 #[derive(Insertable, Debug)]
-#[table_name = "CLIENTS"]
+#[table_name = "clients"]
 pub struct NewClient<'a> {
     pub first_name: &'a str,
     pub last_name: &'a str,

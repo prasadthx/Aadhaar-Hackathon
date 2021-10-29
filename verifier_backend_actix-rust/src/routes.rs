@@ -1,6 +1,6 @@
 use actix_web::{web, Error, HttpResponse, Responder};
 use super::models::{NewClient, Client, InputClient};
-use super::schema::CLIENTS::dsl::*;
+use super::schema::clients::dsl::*;
 use super::Pool;
 use crate::diesel::QueryDsl;
 use crate::diesel::RunQueryDsl;
@@ -20,7 +20,7 @@ pub async fn get_clients(db: web::Data<Pool>) -> Result<HttpResponse, Error> {
 
 fn get_all_clients(pool: web::Data<Pool>) -> Result<Vec<Client>, diesel::result::Error> {
     let conn = pool.get().unwrap();
-    let items = CLIENTS.load::<Client>(&conn)?;
+    let items = clients.load::<Client>(&conn)?;
     Ok(items)
 }
 
@@ -60,7 +60,7 @@ pub async fn delete_client(
 
 fn db_get_client_by_id(pool: web::Data<Pool>, client_id: i32) -> Result<Client, diesel::result::Error> {
     let conn = pool.get().unwrap();
-    CLIENTS.find(client_id).get_result::<Client>(&conn)
+    clients.find(client_id).get_result::<Client>(&conn)
 }
 
 fn add_single_client(
@@ -75,13 +75,13 @@ fn add_single_client(
         time_created: &format!("{}", chrono::Local::now().naive_local()),
         photo: &item.photo,
     };
-    insert_into(CLIENTS).values(&new_client).execute(&conn).expect("Error");
-    let result = CLIENTS.order(id).first(&conn).unwrap();
+    insert_into(clients).values(&new_client).execute(&conn).expect("Error");
+    let result = clients.order(id).first(&conn).unwrap();
     Ok(result)
 }
 
 fn delete_single_client(db: web::Data<Pool>, client_id: i32) -> Result<usize, diesel::result::Error> {
     let conn = db.get().unwrap();
-    let count = delete(CLIENTS.find(client_id)).execute(&conn)?;
+    let count = delete(clients.find(client_id)).execute(&conn)?;
     Ok(count)
 }

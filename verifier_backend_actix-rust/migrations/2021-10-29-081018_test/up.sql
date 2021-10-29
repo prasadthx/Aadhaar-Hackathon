@@ -1,4 +1,6 @@
-CREATE TABLE CLIENTS
+-- Your SQL goes here
+
+CREATE TABLE clients
 (
     id           INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     first_name   TEXT    NOT NULL,
