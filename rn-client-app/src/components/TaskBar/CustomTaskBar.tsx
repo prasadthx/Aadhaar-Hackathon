@@ -1,12 +1,11 @@
+import {Button, Text, TouchableOpacity, View} from "react-native";
 import React, {useRef, useState} from "react";
-import {StyleSheet, TouchableOpacity, View} from "react-native";
-import {CurvedBottomBar} from "react-native-curved-bottom-bar/index";
 import {Ionicons} from "@expo/vector-icons";
+import {CurvedBottomBar} from "react-native-curved-bottom-bar/index";
 import Profile from "../Profile/Profile";
 import CheckIn from "../CheckIn/CheckIn";
-import {MaterialCommunityIcons} from "@expo/vector-icons";
 
-const Taskbar = (props: any) => {
+const Taskbar = () => {
     const ref = useRef();
     const [type, setType] = useState<'down' | 'up'>('down');
 
@@ -39,7 +38,7 @@ const Taskbar = (props: any) => {
         }
 
         return (
-            <MaterialCommunityIcons name={icon} size={23} color={routeName === selectTab ? '#FF3030' : 'gray'} />
+            <Ionicons name={icon} size={23} color={routeName === selectTab ? '#FF3030' : 'gray'} />
         );
     };
 
@@ -97,52 +96,3 @@ const Taskbar = (props: any) => {
 };
 
 export default Taskbar;
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
-    btnCircle: {
-        width: 60,
-        height: 60,
-        borderRadius: 30,
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: 'white',
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 1,
-        },
-        shadowOpacity: 0.20,
-        shadowRadius: 1.41,
-        elevation: 1,
-        bottom: 28
-    },
-    btnCircleUp: {
-        width: 60,
-        height: 60,
-        borderRadius: 30,
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#E8E8E8',
-        bottom: 18,
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 1,
-        },
-        shadowOpacity: 0.20,
-        shadowRadius: 1.41,
-        elevation: 1,
-    },
-    imgCircle: {
-        width: 30,
-        height: 30,
-        tintColor: '#48CEF6'
-    },
-    img: {
-        width: 30,
-        height: 30,
-    }
-});

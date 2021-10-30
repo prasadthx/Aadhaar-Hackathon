@@ -1,5 +1,6 @@
 import {Button, Text, View} from "react-native";
 import React from "react";
+import TaskBar from "../TaskBar/Taskbar";
 
 const CheckIn = ({ navigation }:any) => {
     return (

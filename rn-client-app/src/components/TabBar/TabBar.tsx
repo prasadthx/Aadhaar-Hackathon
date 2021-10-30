@@ -1,40 +1,33 @@
+import {StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import React, {useRef, useState} from "react";
-import {StyleSheet, TouchableOpacity, View} from "react-native";
-import {CurvedBottomBar} from "react-native-curved-bottom-bar/index";
 import {Ionicons} from "@expo/vector-icons";
+import {CurvedBottomBar} from "react-native-curved-bottom-bar/index";
 import Profile from "../Profile/Profile";
 import CheckIn from "../CheckIn/CheckIn";
+import Update from "../Update/Update";
+import Help from "../Help/Help";
+import History from "../History/History";
 import {MaterialCommunityIcons} from "@expo/vector-icons";
 
-const Taskbar = (props: any) => {
+const TabBar = () => {
     const ref = useRef();
     const [type, setType] = useState<'down' | 'up'>('down');
-
-    const onClickButton = () => {
-        if (type === 'up') {
-            setType('down');
-            alert('Change type curve down');
-        } else {
-            setType('up');
-            alert('Change type curve up');
-        }
-    }
 
     const _renderIcon = (routeName: string, selectTab: string) => {
         let icon = '';
 
         switch (routeName) {
-            case 'title1':
-                icon = 'ios-home-outline';
+            case 'CheckIn':
+                icon = 'account-check';
                 break;
-            case 'title2':
-                icon = 'apps-outline';
+            case 'Update':
+                icon = 'database-refresh';
                 break;
-            case 'title3':
-                icon = 'bar-chart-outline';
+            case 'History':
+                icon = 'history';
                 break;
-            case 'title4':
-                icon = 'person-outline';
+            case 'Help':
+                icon = 'help';
                 break;
         }
 
@@ -57,38 +50,44 @@ const Taskbar = (props: any) => {
                 initialRouteName="title1"
                 renderCircle={({ selectTab, navigate }) => (
                     <TouchableOpacity
-                        style={[type === 'down' ? styles.btnCircle : styles.btnCircleUp]} onPress={onClickButton}
+                        style={[type === 'down' ? styles.btnCircle : styles.btnCircleUp]} onPress={()=>navigate("Profile")}
                     >
-                        <Ionicons name="chatbubbles-outline" size={23} />
+                        <MaterialCommunityIcons name="account-settings" size={23} />
                     </TouchableOpacity>
                 )}
                 tabBar={({ routeName, selectTab, navigate }) => {
                     return (
                         <TouchableOpacity
-                            onPress={() => navigate(routeName)}
+                            onPress={() => {navigate(routeName)}}
                             style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                             {_renderIcon(routeName, selectTab)}
+                            <Text>{routeName}</Text>
                         </TouchableOpacity>
                     );
                 }}>
                 <CurvedBottomBar.Screen
-                    name="title1"
-                    position="left"
-                    component={({ navigate }) => <View style={{ backgroundColor: '#BFEFFF', flex: 1 }} />}
-                />
-                <CurvedBottomBar.Screen
-                    name="title2"
+                    name="Profile"
+                    position="center"
                     component={Profile}
-                    position="left"
                 />
                 <CurvedBottomBar.Screen
-                    name="title3"
-                    position="right"
+                    name="CheckIn"
+                    position="left"
                     component={CheckIn}
                 />
                 <CurvedBottomBar.Screen
-                    name="title4"
-                    component={Profile}
+                    name="Update"
+                    component={Update}
+                    position="left"
+                />
+                <CurvedBottomBar.Screen
+                    name="History"
+                    position="right"
+                    component={History}
+                />
+                <CurvedBottomBar.Screen
+                    name="Help"
+                    component={Help}
                     position="right"
                 />
             </CurvedBottomBar.Navigator>
@@ -96,7 +95,7 @@ const Taskbar = (props: any) => {
     );
 };
 
-export default Taskbar;
+export default TabBar;
 
 const styles = StyleSheet.create({
     container: {
@@ -146,3 +145,4 @@ const styles = StyleSheet.create({
         height: 30,
     }
 });
+
