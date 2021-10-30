@@ -1,6 +1,5 @@
 import {StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import React, {useRef, useState} from "react";
-import {Ionicons} from "@expo/vector-icons";
 import {CurvedBottomBar} from "react-native-curved-bottom-bar/index";
 import Profile from "../Profile/Profile";
 import CheckIn from "../CheckIn/CheckIn";
@@ -32,7 +31,10 @@ const TabBar = () => {
         }
 
         return (
+            <>
             <MaterialCommunityIcons name={icon} size={23} color={routeName === selectTab ? '#FF3030' : 'gray'} />
+            <Text style={{color:'gray'}}>{routeName}</Text>
+            </>
         );
     };
 
@@ -43,7 +45,7 @@ const TabBar = () => {
                 type={type}
                 height={60}
                 circleWidth={55}
-                bgColor="white"
+                bgColor="black"
                 borderTopLeftRight={true}
                 strokeWidth={2}
                 swipeEnabled={true}
@@ -61,7 +63,6 @@ const TabBar = () => {
                             onPress={() => {navigate(routeName)}}
                             style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                             {_renderIcon(routeName, selectTab)}
-                            <Text>{routeName}</Text>
                         </TouchableOpacity>
                     );
                 }}>
@@ -100,6 +101,7 @@ export default TabBar;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        borderColor:"#000",
     },
     btnCircle: {
         width: 60,
@@ -124,7 +126,7 @@ const styles = StyleSheet.create({
         borderRadius: 30,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#E8E8E8',
+        backgroundColor: '#000',
         bottom: 18,
         shadowColor: "#000",
         shadowOffset: {

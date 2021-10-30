@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\Prasad\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add @types/react-native-curved-bottom-tabbar --dev
+  C:\Program Files\nodejs\node.exe C:\Users\Prasad\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add @types/react-native-otp-input-fields --dev
 
 PATH: 
   C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\Users\Prasad\Downloads\WINDOWS.X64_193000_db_home\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Library\Developer\Toolchains\unknown-Asserts-development.xctoolchain\usr\bin;C:\Library\Swift-development\bin;C:\Library\icu-67\usr\bin;C:\Program Files (x86)\Paragon Software\APFS for Windows\;C:\Program Files (x86)\Paragon Software\LinuxFS for Windows\;C:\ProgramData\chocolatey\bin;C:\Program Files\OpenJDK\openjdk-8u302-b08\bin;;C:\Users\Prasad\.wasmer\bin;;C:\Users\Prasad\.wasmer\globals\wapm_packages\.bin;C:\Program Files\CMake\bin;C:\Users\Prasad\.cargo\bin;C:\Users\Prasad\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\Prasad\AppData\Local\Programs\Python\Python39\;C:\Users\Prasad\AppData\Local\Microsoft\WindowsApps;C:\Users\Prasad\AppData\Roaming\npm;C:\Users\Prasad\AppData\Local\Programs\Julia-1.6.2\bin;C:\Users\Prasad\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2021.1.3\bin;C:\Library\Developer\Toolchains\unknown-Asserts-development.xctoolchain\usr\bin;C:\GNU\bin;C:\Users\Prasad\Videos\chromedriver_win32;C:\Users\Prasad\AppData\Local\Android\Sdk\platform-tools;C:\Program Files\Genymobile\Genymotion\tools;C:\Users\Prasad\.wasmer\bin;C:\Program Files (x86)\Vim\vim82;C:\Program Files\Java\jdk-13.0.2\bin;C:\sqlite64;
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@types%2freact-native-curved-bottom-tabbar: Not found
+  Error: https://registry.yarnpkg.com/@types%2freact-native-otp-input-fields: Not found
       at Request.params.callback [as _callback] (C:\Users\Prasad\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:67029:18)
       at Request.self.callback (C:\Users\Prasad\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140883:22)
       at Request.emit (events.js:375:28)
@@ -39,6 +39,7 @@ npm manifest:
     "dependencies": {
       "@expo/vector-icons": "^12.0.5",
       "@mindinventory/react-native-tab-bar-interaction": "^2.1.4",
+      "@quanle94/react-native-otp-inputs": "^4.0.0-alpha.1.1",
       "@react-navigation/bottom-tabs": "^6.0.9",
       "@react-navigation/native": "^6.0.6",
       "@react-navigation/native-stack": "^6.2.5",
@@ -50,13 +51,16 @@ npm manifest:
       "expo-status-bar": "~1.1.0",
       "react": "17.0.1",
       "react-dom": "17.0.1",
-      "react-native": "0.64.2",
+      "react-native": "^0.64.2",
+      "react-native-curved-bottom-bar": "^1.5.3",
       "react-native-curved-bottom-tabbar": "^0.0.3",
       "react-native-gesture-handler": "^1.10.3",
+      "react-native-otp-input-fields": "^1.0.4",
+      "react-native-pager-view": "^5.4.8",
       "react-native-reanimated": "^2.2.3",
       "react-native-safe-area-context": "3.3.2",
       "react-native-screens": "~3.8.0",
-      "react-native-svg": "12.1.1",
+      "react-native-svg": "^12.1.1",
       "react-native-web": "0.17.1",
       "react-redux": "^7.2.6",
       "tailwind-react-native-classnames": "^1.5.1"
@@ -1298,6 +1302,11 @@ Lockfile:
       "@nodelib/fs.scandir" "2.1.5"
       fastq "^1.6.0"
   
+  "@quanle94/react-native-otp-inputs@^4.0.0-alpha.1.1":
+    version "4.0.0-alpha.1.1"
+    resolved "https://registry.yarnpkg.com/@quanle94/react-native-otp-inputs/-/react-native-otp-inputs-4.0.0-alpha.1.1.tgz#156610365f30713d1d0b333bf5f18889e08ee3fd"
+    integrity sha512-iJpxdA5DEsX1m/jNvP32S67qbtJuhuAfMtYyPhyqjeXMVDjq4tyoodec2dPpLmJ8YPdti4NTTEp26gKXcq7rgw==
+  
   "@react-native-community/cli-debugger-ui@^5.0.1":
     version "5.0.1"
     resolved "https://registry.yarnpkg.com/@react-native-community/cli-debugger-ui/-/cli-debugger-ui-5.0.1.tgz#6b1f3367b8e5211e899983065ea2e72c1901d75f"
@@ -2528,10 +2537,22 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.9.tgz#6410af31b26bd0520933d02cbc64fce9ce3fbf0b"
     integrity sha512-rpw6JPxK6Rfg1zLOYCSwle2GFOOsnjmDYDaBwEcwoOg4qlsIVCN789VkBZDJAGi4T07gI4YSutR43t9Zz4Lzuw==
   
+  "d3-path@1 - 2":
+    version "2.0.0"
+    resolved "https://registry.yarnpkg.com/d3-path/-/d3-path-2.0.0.tgz#55d86ac131a0548adae241eebfb56b4582dd09d8"
+    integrity sha512-ZwZQxKhBnv9yHaiWd6ZU4x5BtCQ7pXszEV9CU6kRgwIQVQGLMv1oiL4M+MK/n79sYzsj+gcgpPQSctJUsLN7fA==
+  
   "d3-path@1 - 3":
     version "3.0.1"
     resolved "https://registry.yarnpkg.com/d3-path/-/d3-path-3.0.1.tgz#f09dec0aaffd770b7995f1a399152bf93052321e"
     integrity sha512-gq6gZom9AFZby0YLduxT1qmrp4xpBA1YZr19OI717WIdKE2OM5ETq5qrHLb301IgxhLwcuxvGZVLeeWc/k1I6w==
+  
+  d3-shape@^2.1.0:
+    version "2.1.0"
+    resolved "https://registry.yarnpkg.com/d3-shape/-/d3-shape-2.1.0.tgz#3b6a82ccafbc45de55b57fcf956c584ded3b666f"
+    integrity sha512-PnjUqfM2PpskbSLTJvAzp2Wv4CZsnAgTfcVRTwW03QR3MkXF8Uo7B1y/lWkAsmbKwuecto++4NlsYcvYpXpTHA==
+    dependencies:
+      d3-path "1 - 2"
   
   d3-shape@^3.0.1:
     version "3.0.1"
@@ -5124,6 +5145,13 @@ Lockfile:
       jscodeshift "^0.11.0"
       nullthrows "^1.1.1"
   
+  react-native-curved-bottom-bar@^1.5.3:
+    version "1.5.3"
+    resolved "https://registry.yarnpkg.com/react-native-curved-bottom-bar/-/react-native-curved-bottom-bar-1.5.3.tgz#6f10ed3e2e7ba2f96e351418f235a2d46293a675"
+    integrity sha512-OxSbg+AzxYuASTOIuOO8EbwfdGpd+tYQS1cnyvFAP4QWDYP8wTlF4OstvwKCjuSRSM5JDmPN097qSMxV6TjGFQ==
+    dependencies:
+      d3-shape "^2.1.0"
+  
   react-native-curved-bottom-tabbar@^0.0.3:
     version "0.0.3"
     resolved "https://registry.yarnpkg.com/react-native-curved-bottom-tabbar/-/react-native-curved-bottom-tabbar-0.0.3.tgz#2c07c16237858355832f0e0e7892055668c845cc"
@@ -5139,6 +5167,16 @@ Lockfile:
       hoist-non-react-statics "^3.3.0"
       invariant "^2.2.4"
       prop-types "^15.7.2"
+  
+  react-native-otp-input-fields@^1.0.4:
+    version "1.0.4"
+    resolved "https://registry.yarnpkg.com/react-native-otp-input-fields/-/react-native-otp-input-fields-1.0.4.tgz#6f8aa4cc4708a5151513aaa5f73350dcebf5fb08"
+    integrity sha512-edsr5vWyq91WSm4d8pmd/zH0EycoNEe+OJlHzHziBHPhAQ9CQOqpFCMAoO8E2uQyRJ/Fvsex7k5RCp+nUOMY+g==
+  
+  react-native-pager-view@^5.4.8:
+    version "5.4.8"
+    resolved "https://registry.yarnpkg.com/react-native-pager-view/-/react-native-pager-view-5.4.8.tgz#c0872989e3fa9ef05d5d8cf408e42fc1d3fbbd7c"
+    integrity sha512-Zfsdirwu4LIKtPMAFgt5ctE/Yg9QKG3k2pom0mDyLbUXQD/O0/yeK36JBJjsMEd/z0JJ4PsrHZ+BcGyzNVgUaQ==
   
   react-native-reanimated@^2.2.3:
     version "2.2.3"
@@ -5162,7 +5200,7 @@ Lockfile:
     dependencies:
       warn-once "^0.1.0"
   
-  react-native-svg@12.1.1, react-native-svg@^12.1.1:
+  react-native-svg@^12.1.1:
     version "12.1.1"
     resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-12.1.1.tgz#5f292410b8bcc07bbc52b2da7ceb22caf5bcaaee"
     integrity sha512-NIAJ8jCnXGCqGWXkkJ1GTzO4a3Md5at5sagYV8Vh4MXYnL4z5Rh428Wahjhh+LIjx40EE5xM5YtwyJBqOIba2Q==
@@ -5183,7 +5221,7 @@ Lockfile:
       normalize-css-color "^1.0.2"
       prop-types "^15.6.0"
   
-  react-native@0.64.2:
+  react-native@^0.64.2:
     version "0.64.2"
     resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.64.2.tgz#233b6ed84ac4749c8bc2a2d6cf63577a1c437d18"
     integrity sha512-Ty/fFHld9DcYsFZujXYdeVjEhvSeQcwuTGXezyoOkxfiGEGrpL/uwUZvMzwShnU4zbbTKDu2PAm/uwuOittRGA==
