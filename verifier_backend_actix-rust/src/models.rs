@@ -30,5 +30,4 @@ pub struct InputClient {
     pub mobile: String,
     pub photo: String,
     pub birth_date: String,
-    pub time_created: String
 }
