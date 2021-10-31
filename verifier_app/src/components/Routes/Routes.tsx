@@ -30,12 +30,6 @@ export const Routes = (props:PropTypes) => {
                         View
                     </div>
                 </Link>
-                <Link to="/delete" onClick={()=>props.setPage("Delete")}>
-                    <div className={"route-menu-item inline-flex items-center"}>
-                        <MdDelete style={{color:"white"}} className={"fill-current w-4 h-4 mr-2"}/>
-                        Delete
-                    </div>
-                </Link>
             </div>
         </div>
     )

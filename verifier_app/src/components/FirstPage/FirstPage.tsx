@@ -22,9 +22,6 @@ export const FirstPage = () => {
                             <Route path="/view">
                                 <ViewCheckIn />
                             </Route>
-                            <Route path="/delete">
-                                <AddCheckIn />
-                            </Route>
                             <Route path="" exact>
                                 <Routes setPage={setCurrentPage}/>
                             </Route>
