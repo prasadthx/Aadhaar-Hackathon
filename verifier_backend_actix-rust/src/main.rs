@@ -1,4 +1,5 @@
 use actix_web::{web, App, HttpServer};
+use actix_cors::Cors;
 
 #[macro_use]
 extern crate diesel;
@@ -25,7 +26,14 @@ async fn main() -> std::io::Result<()> {
 
 
     HttpServer::new( move || {
+        let cors = Cors::default()
+            .allow_any_origin()
+            .allowed_methods(vec!["GET", "POST", "DELETE"])
+            .allow_any_header()
+            .max_age(3600);
+
         App::new()
+            .wrap(cors)
             .data(pool.clone())
             .route("/", web::get().to(routes::actix_running))
             .route("/clients", web::get().to(routes::get_clients))
