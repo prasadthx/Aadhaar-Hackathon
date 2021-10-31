@@ -74,6 +74,7 @@ fn add_single_client(
         mobile: &item.mobile,
         time_created: &format!("{}", chrono::Local::now().naive_local()),
         photo: &item.photo,
+        birth_date: &item.birth_date,
     };
     insert_into(clients).values(&new_client).execute(&conn).expect("Error");
     let result = clients.order(id).first(&conn).unwrap();

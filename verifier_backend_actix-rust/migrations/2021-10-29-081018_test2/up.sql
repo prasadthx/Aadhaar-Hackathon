@@ -7,5 +7,6 @@ CREATE TABLE clients
     last_name    TEXT    NOT NULL,
     mobile       TEXT    NOT NULL,
     photo        TEXT    NOT NULL,
+    birth_date   TEXT    NOT NULL,
     time_created TEXT    NOT NULL
 );

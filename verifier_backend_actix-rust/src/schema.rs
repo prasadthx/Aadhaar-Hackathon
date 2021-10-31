@@ -5,6 +5,7 @@ table! {
         last_name -> Text,
         mobile -> Text,
         photo -> Text,
+        birth_date -> Text,
         time_created -> Text,
     }
 }

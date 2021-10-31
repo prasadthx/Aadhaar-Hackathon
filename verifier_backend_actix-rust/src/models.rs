@@ -8,6 +8,7 @@ pub struct Client{
     pub last_name: String,
     pub mobile: String,
     pub photo: String,
+    pub birth_date: String,
     pub time_created: String,
 }
 
@@ -18,6 +19,7 @@ pub struct NewClient<'a> {
     pub last_name: &'a str,
     pub mobile: &'a str,
     pub photo: &'a str,
+    pub birth_date: &'a str,
     pub time_created: &'a str,
 }
 
@@ -27,4 +29,6 @@ pub struct InputClient {
     pub last_name: String,
     pub mobile: String,
     pub photo: String,
+    pub birth_date: String,
+    pub time_created: String
 }
