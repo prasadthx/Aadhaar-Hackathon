@@ -1,3 +1,5 @@
 /target
 
 !*/target/release/verifier_backend_actix-rust.exe
+
+!*/release/verifier_backend_actix-rust.exe
